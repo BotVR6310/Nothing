@@ -9,18 +9,13 @@ using GorillaExtensions;
 
 namespace Nothing
 {
-    /// <summary>
-    /// This is your mod's main class.
-    /// </summary>
-
-    /* This attribute tells Utilla to look for [ModdedGameJoin] and [ModdedGameLeave] */
     [ModdedGamemode]
     [BepInDependency("org.legoandmars.gorillatag.utilla", "1.5.0")]
     [BepInPlugin(PluginInfo.GUID, PluginInfo.Name, PluginInfo.Version)]
     public class Plugin : BaseUnityPlugin
     {
         public static Plugin instance;
-        public GameObject dingus;
+        //public GameObject dingus;
         public GameObject table;
         public GameObject cube;
         void Start()
@@ -33,11 +28,12 @@ namespace Nothing
             AssetBundle assetBundle = LoadAssetBundle("Nothing.Resources.nothing");
             table = UnityEngine.Object.Instantiate(assetBundle.LoadAsset<GameObject>("table"));
             cube = UnityEngine.Object.Instantiate(assetBundle.LoadAsset<GameObject>("cube"));
-            dingus = UnityEngine.Object.Instantiate(assetBundle.LoadAsset<GameObject>("dingus"));
-            this.table.transform.position = new Vector3(-68.582f, 11.57f, -84.047f);
-            this.cube.transform.position = new Vector3(-68.584f, 11.68f, -84.05f);
-            //this.cube.transform.eulerAngles += new Vector3(0f, 0f, -27f); dont need it
-            this.dingus.transform.position = new Vector3(-63.934f, 13.25f, -82.926f);
+            //dingus = UnityEngine.Object.Instantiate(assetBundle.LoadAsset<GameObject>("dingus"));
+            this.table.transform.position = new Vector3(-65.6194f, 11.5296f, -84.3884f);
+            this.table.transform.eulerAngles += new Vector3(0f, 82.4559f, 0f);
+            this.cube.transform.position = new Vector3(-65.6194f, 11.6496f, - 84.3884f);
+            this.cube.transform.eulerAngles += new Vector3(0f, 82.4559f, 0f);
+            //this.dingus.transform.position = new Vector3(-63.934f, 13.25f, -82.926f);
             cube.layer = 18;
             cube.AddComponent<oddbutton>();
             cube.AddComponent<AudioSource>();
